@@ -63,21 +63,32 @@ class Monitor
                                 ]
                             ]);
 
-                            echo "Factura subida \n";
+                            $message = "Proceso realizado correctamente para el archivo $newFile | " . $response->getBody()->getContents();
 
-                            $logs = new Log($response->getStatusCode(), "Proceso realizado correctamente para el archivo $newFile | " . $response->getBody()->getContents());
+                            echo $message;
+
+                            $logs = new Log($response->getStatusCode(), $message);
+
                         } catch (RequestException $e) {
-
-                            echo "Error al subir la factura \n";
                             
                             if ($e->hasResponse()) {
                                 $response = $e->getResponse();
                                 $statusCode = $response->getStatusCode();
                                 $content = $response->getBody()->getContents();
 
-                                $logs = new Log($statusCode, "Error: " . $content);
+                                $message = "Error: " . $content;
+
+                                echo $message;
+
+                                $logs = new Log($statusCode,$message);
+                                
                             } else {
-                                $logs = new Log(500, "Error: " . $e->getMessage());
+
+                                $message = "Error: " . $e->getMessage();
+
+                                echo $message;
+
+                                $logs = new Log(500, $message);
                             }
                         }
                     }
