@@ -49,6 +49,7 @@ class Monitor
                         try {
 
                             $response = $client->post($_ENV['API_URL'], [
+                                'verify' => __DIR__ . '/../key/cacert.pem',
                                 'multipart' => [
                                     [
                                         'name' => 'factura',
