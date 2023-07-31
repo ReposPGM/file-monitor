@@ -12,9 +12,6 @@ int main()
 
     refreshEnv();
 
-    const char *gcc = "choco install mingw";
-    system(gcc);
-
     const char *curl = "choco install curl -y";
     system(curl);
 
