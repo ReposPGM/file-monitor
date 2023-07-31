@@ -5,4 +5,4 @@ api.log
 previous_files.json
 .DS_Store
 /.vscode
-*.exe
+build/install.exe
