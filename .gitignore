@@ -1,0 +1,8 @@
+/vendor
+api.log
+/files
+.env
+previous_files.json
+.DS_Store
+/.vscode
+*.exe
