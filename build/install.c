@@ -9,16 +9,16 @@ int main()
     const char *choco = "powershell -Command \"Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))\"";
     system(choco);
 
-    const char *curl = "C:\ProgramData\chocolatey\choco install curl -y";
+    const char *curl = "C:\\ProgramData\\chocolatey\\choco install curl -y";
     system(curl);
 
-    const char *php = "C:\ProgramData\chocolatey\choco install php -y";
+    const char *php = "C:\\ProgramData\\chocolatey\\choco install php -y";
     system(php);
 
-    const char *composer = "C:\ProgramData\chocolatey\choco install composer -y";
+    const char *composer = "C:\\ProgramData\\chocolatey\\choco install composer -y";
     system(composer);
 
-    const char *git = "C:\ProgramData\chocolatey\choco install git -y";
+    const char *git = "C:\\ProgramData\\chocolatey\\choco install git -y";
     system(git);
 
     const char *get_project = "git clone https://github.com/ReposPGM/file-monitor.git";
