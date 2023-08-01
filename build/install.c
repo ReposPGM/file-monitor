@@ -59,9 +59,11 @@ void createFile()
 
     printf("\n Introduce la ruta completa hacia la carpeta donde se subiran los archivos: ");
     fgets(path, sizeof(path), stdin);
+    path[strcspn(path, "\n")] = 0;
 
     printf("\n Introduce la api donde se subiran los archivos: ");
     fgets(api, sizeof(api), stdin);
+    path[strcspn(api, "\n")] = 0;
 
     replace_backslash(path);
 
