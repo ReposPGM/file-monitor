@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <string.h>
 
-void createFile();
+void createEnv();
 void replace_backslash();
 
 int main()
@@ -34,14 +34,17 @@ int main()
     const char *composer_install = "composer install";
     system(composer_install);
 
-    createFile();
+    createEnv();
 
-    printf("Proyecto instalado");
+    printf("\n Proyecto instalado");
+
+    printf("\n Presione 'Enter' para cerrar el programa...");
+    getchar();
 
     return 0;
 }
 
-void createFile()
+void createEnv()
 {
     char path[200];
     char api[200];
