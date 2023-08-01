@@ -3,6 +3,7 @@
 #include <unistd.h>
 
 void createFile();
+void replace_backslash();
 
 int main()
 {
@@ -62,6 +63,8 @@ void createFile()
     printf("\n Introduce la api donde se subiran los archivos: ");
     fgets(api, sizeof(api), stdin);
 
+    replace_backslash(path);
+
     sprintf(contact_path, "PATH_FILES=\"%s\"", path);
     sprintf(contact_api, "\nAPI_URL=\"%s\"", api);
 
@@ -69,4 +72,12 @@ void createFile()
     fprintf(file, contact_api);
 
     fclose(file);
+}
+
+void replace_backslash(char* str) {
+    for (int i = 0; str[i] != '\0'; ++i) {
+        if (str[i] == '\\') {
+            str[i] = '/';
+        }
+    }
 }
