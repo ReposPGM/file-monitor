@@ -65,7 +65,7 @@ class Monitor
 
                             $message = "Proceso realizado correctamente para el archivo $newFile | " . $response->getBody()->getContents();
 
-                            echo $message;
+                            echo $message  . "\n";
 
                             $logs = new Log($response->getStatusCode(), $message);
 
@@ -78,7 +78,7 @@ class Monitor
 
                                 $message = "Error: " . $content;
 
-                                echo $message;
+                                echo $message  . "\n";
 
                                 $logs = new Log($statusCode,$message);
                                 
@@ -86,7 +86,7 @@ class Monitor
 
                                 $message = "Error: " . $e->getMessage();
 
-                                echo $message;
+                                echo $message . "\n";
 
                                 $logs = new Log(500, $message);
                             }
